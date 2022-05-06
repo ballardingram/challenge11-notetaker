@@ -7,7 +7,7 @@ const path = require('path');
 // DOCUMENTATION > FOR LOOP, 'LET' SECTION, (https://www.w3schools.com/js/js_loop_for.asp)
 function updateDB(id, noteArray) {
     const deletedNote = id;
-    for(let i =0; i < noteArray.length; i++) {
+    for(let i = 0; i < noteArray.length; i++) {
         if(deletedNote === noteArray[i].id) {
             noteArray.splice(i,1);
             fs.writeFileSync(
@@ -23,8 +23,8 @@ function updateDB(id, noteArray) {
 
 // FUNCTION > NEW NOTE SYNTAX
 function newNote (body, noteArray) {
-    const addNote = body
-    noteArray.push(addNote);
+    const newNote = body
+    noteArray.push(newNote);
     fs.writeFileSync(
         path.join(__dirname, "../db/db.json"),
         JSON.stringify({notes: noteArray}, null, 2)

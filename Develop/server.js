@@ -1,7 +1,7 @@
 // EXTERNAL PACKAGES > FUNCTIONALITY OF SERVER
-const express = require('express');
-const path = require('path');
-const fs = require('fs');
+// EDIT > ORIGINALLY HAD FS HERE, BUT REMOVED NOT NECESARY
+const express = require("express");
+const path = require("path");
 
 // PORT
 const PORT = process.env.PORT || 3001;
@@ -14,12 +14,12 @@ const htmlRoutes = require('./routes/htmlRoutes');
 // FUNCTION > REFERENCED THE 'ZOOKEEPER' LESSON
 // DOCUMENTATION > EXPRESS.JS APP.USE FUNCTION (https://www.geeksforgeeks.org/express-js-app-use-function/)
 // FUNCTION > CONNECTION TO HEROKU
-app.use(express.urlencoded({extended:true}));
+app.use(express.static("public"));
 app.use(express.json());
-app.use(express.static('public'));
+app.use(express.urlencoded({extended:true}));
 
 // ROUTES > APIROUTES
-app.use('./api',apiRoutes);
+app.use('./api', apiRoutes);
 app.use('/', htmlRoutes);
 
 // PORT > LISTENING

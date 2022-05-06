@@ -16,15 +16,16 @@ router.get("/notes", (req,res) => {
 // ROUTES > POST WITH UUIDV4 INTEGRATED
 router.post("/notes", (req,res) => {
     req.body.id = uuidv4();
-    const newNote = createNewNote(req.body, notes);
-    res.json(newNote)
+    notes.push(req.body);
+    res.json(notes);
 });
 
 // ROUTES > DELETE *BONUS*
-router.delete("/notes", (req,res) => {
-const params = req.params.id
-updateDB(params, notes);
-res.redirect("");
+// DOCUMENTATION > DELETE BASED ON ID, REFERENCED CRUD TABLE (https://www.rithmschool.com/courses/node-express-fundamentals/express-router)
+router.delete("/notes/:id", (req,res) => {
+const {id} = req.params;
+const appIndex = notes.findIndex((p) => p.id ==id);
+res.json(notes);
 });
 
 module.exports = router;
