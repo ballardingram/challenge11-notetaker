@@ -1,6 +1,5 @@
 // EXTERNAL > REQUIRED; FS AND PATH DO NOT REQUIRE INSTALL
 const fs = require('fs');
-const { Module } = require('module');
 const path = require('path');
 
 // FUNCTION > UPDATE DATABASE AND NOTES

@@ -1,33 +1,30 @@
 // DOCUMENTATION > API ROUTES WITH EXPRESS (https://expressjs.com/en/api.html)
 // DOCUMENTATION > UUID (https://www.npmjs.com/package/uuid)
-// NOTE > UUID - SYNTAX PULLED DIRECTLY FROM SITE TO SUE WITH COMMONJS
+// NOTE > UUID - SYNTAX PULLED DIRECTLY FROM SITE TO WORK WITH COMMONJS - USED FOR UNIQUE ID
 // ROUTES > EXTERNAL ROUTES
-const router = require('express').Router();
-const { v4: uuidv4} = require('uuid');
-
 //IMPORT > FUNCTIONS REQUIRED FROM LIB/NOTE.JS
-const {updateDB, newNote} = require("../../lib/note");
-const {note} = require("../../db/db.json")
+const router = require("express").Router();
+const { v4: uuidv4 } = require('uuid');
+const notes = require("../../db/db.json");
 
 // ROUTES > GET ALL
 // NOTE > PULLED FROM MODULE 11 SAMPLE FOR GENERAL SYNTAX STRUCTURE
-router.get('/note', (req,res) => {
-    let results = note;
-    res.json(results);
+router.get("/notes", (req,res) => {
+    res.json(notes);
 });
 
 // ROUTES > POST WITH UUIDV4 INTEGRATED
-router.post('/note', (req,res) => {
+router.post("/notes", (req,res) => {
     req.body.id = uuidv4();
-    const newNote = createNewNote(req.body, note);
+    const newNote = createNewNote(req.body, notes);
     res.json(newNote)
 });
 
 // ROUTES > DELETE *BONUS*
-router.delete('/note', (req,res) => {
+router.delete("/notes", (req,res) => {
 const params = req.params.id
-updateDB(params, note);
-res.redirect('');
+updateDB(params, notes);
+res.redirect("");
 });
 
 module.exports = router;
