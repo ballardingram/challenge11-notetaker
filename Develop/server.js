@@ -10,7 +10,7 @@ const apiRoutes = require('./routes/apiRoutes');
 const htmlRoutes = require('./routes/htmlRoutes');
 
 // FUNCTION > REFERENCED THE 'ZOOKEEPER' LESSON
-app.use(Express.urlencoded({extended:true}));
+app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 app.use(express.static('public'));
 

@@ -3,4 +3,14 @@
 const path = require("path");
 const router = require('express').Router();
 
+// ROUTES > GET FROM INDEX.HTML
+router.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '../../public/index.html'));
+});
+
+// ROUTES > GET FROM NOTES.HTML
+router.get('/', (req,res) => {
+    res.sendFile(path.join(__dirname, "../../public/notes.html"));
+});
+
 module.exports = router;
