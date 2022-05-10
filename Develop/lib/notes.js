@@ -5,14 +5,14 @@ const path = require('path');
 // FUNCTION > UPDATE DATABASE AND NOTES
 // DOCUMENTATION > UPDATE DATABSE AND FUNCTIONS (https://www.geeksforgeeks.org/how-to-update-a-record-in-your-local-custom-database-in-node-js/)
 // DOCUMENTATION > FOR LOOP, 'LET' SECTION, (https://www.w3schools.com/js/js_loop_for.asp)
-function updateDB(id, noteArray) {
+function updateDB(id, notesArray) {
     const deletedNote = id;
-    for(let i = 0; i < noteArray.length; i++) {
-        if(deletedNote === noteArray[i].id) {
-            noteArray.splice(i,1);
+    for(let i = 0; i < notesArray.length; i++) {
+        if(deletedNote === notesArray[i].id) {
+            notesArray.splice(i,1);
             fs.writeFileSync(
                 path.join(__dirname, "../db/db.json"),
-                JSON.stringify({notes: noteArray}, null, 2), err => {
+                JSON.stringify({notes: notesArray}, null, 2), err => {
                 if (err) {
                     throw err;
                 }
@@ -22,15 +22,15 @@ function updateDB(id, noteArray) {
 }
 
 // FUNCTION > NEW NOTE SYNTAX
-function newNote (body, noteArray) {
+function createNewNote (body, notesArray) {
     const newNote = body
-    noteArray.push(newNote);
+    notesArray.push(newNote);
     fs.writeFileSync(
         path.join(__dirname, "../db/db.json"),
-        JSON.stringify({notes: noteArray}, null, 2)
+        JSON.stringify({notes: notesArray}, null, 2)
     );
-    return addNote;
+    return newNote;
 };
 
 // DOCUMENTATION > MULTIPLE FUNCTIONS EXPORTED, i forgot how, USED IMAGE ABOVE 'SUMMARY' (https://atomizedobjects.com/blog/javascript/how-to-export-multiple-functions-in-javascript/)
-module.exports = {updateDB, newNote,};
+module.exports = {updateDB, createNewNote};

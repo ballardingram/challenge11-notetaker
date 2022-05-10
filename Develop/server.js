@@ -2,24 +2,24 @@
 // EDIT > ORIGINALLY HAD FS HERE, BUT REMOVED NOT NECESARY
 const express = require("express");
 const path = require("path");
-
-// PORT
-const PORT = process.env.PORT || 3001;
 const app = express();
 
 // ROUTES
 const apiRoutes = require('./routes/apiRoutes');
 const htmlRoutes = require('./routes/htmlRoutes');
 
+// PORT
+const PORT = process.env.PORT || 3001;
+
 // FUNCTION > REFERENCED THE 'ZOOKEEPER' LESSON
 // DOCUMENTATION > EXPRESS.JS APP.USE FUNCTION (https://www.geeksforgeeks.org/express-js-app-use-function/)
 // FUNCTION > CONNECTION TO HEROKU
-app.use(express.static("public"));
-app.use(express.json());
 app.use(express.urlencoded({extended:true}));
+app.use(express.json());
+app.use(express.static("public"));
 
 // ROUTES > APIROUTES
-app.use('./api', apiRoutes);
+app.use('/api', apiRoutes);
 app.use('/', htmlRoutes);
 
 // PORT > LISTENING

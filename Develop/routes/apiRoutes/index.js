@@ -4,28 +4,30 @@
 // ROUTES > EXTERNAL ROUTES
 //IMPORT > FUNCTIONS REQUIRED FROM LIB/NOTE.JS
 const router = require("express").Router();
+const {updateDB, createNewNote} = require("../../lib/notes");
 const { v4: uuidv4 } = require('uuid');
-const notes = require("../../db/db.json");
+const {notes} = require("../../db/db.json");
 
-// ROUTES > GET ALL
+// ROUTES > GET ALL EXISTING  NOTES
 // NOTE > PULLED FROM MODULE 11 SAMPLE FOR GENERAL SYNTAX STRUCTURE
 router.get("/notes", (req,res) => {
-    res.json(notes);
+    let results = notes;
+    res.json(results);
 });
 
-// ROUTES > POST WITH UUIDV4 INTEGRATED
+// ROUTES > POST WITH UUIDV4 INTEGRATED FOR IDS
 router.post("/notes", (req,res) => {
     req.body.id = uuidv4();
-    notes.push(req.body);
-    res.json(notes);
+    const newNote = createNewNote(req.body, notes);
+    res.json(newNote);
 });
 
 // ROUTES > DELETE *BONUS*
 // DOCUMENTATION > DELETE BASED ON ID, REFERENCED CRUD TABLE (https://www.rithmschool.com/courses/node-express-fundamentals/express-router)
 router.delete("/notes/:id", (req,res) => {
-const {id} = req.params;
-const appIndex = notes.findIndex((p) => p.id ==id);
-res.json(notes);
+const params = req.params.id;
+updateDB(params, notes);
+res.redirect('');
 });
 
 module.exports = router;
