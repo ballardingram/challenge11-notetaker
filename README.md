@@ -44,4 +44,4 @@ https://drive.google.com/file/d/1j7gD0tjqXXiuwk5B-uw5ZIdKogiB2KE2/view
 ### Heroku Deployment
 Click on the link below to access the deployed HEROKU site.
 
-https://git.heroku.com/challenge11-notetaker.git
+https://challenge11-notetaker.herokuapp.com/
