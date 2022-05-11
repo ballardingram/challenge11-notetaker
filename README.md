@@ -29,10 +29,11 @@ I tested my routes using Insomnia. A tip from my Tutor is to start using NODEMON
 
 ### Homepage
 
-### Note's Dashboard
+### Note's Dashboard and Functionality
 
 ### Video of Site Functionality
 Click on the link below to access a VIDEO DEMO of the application.
 
 ### Heroku Deployment
 Click on the link below to access the deployed HEROKU site.
+https://git.heroku.com/challenge11-notetaker.git
