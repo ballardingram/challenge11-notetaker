@@ -28,8 +28,13 @@ I tested my routes using Insomnia. A tip from my Tutor is to start using NODEMON
 ## Project Media
 
 ### Homepage
+![alt text](https://github.com/ballardingram/challenge11-notetaker/blob/main/public/assets/images/readme1.jpg "Homepage")
 
 ### Note's Dashboard and Functionality
+![alt text](https://github.com/ballardingram/challenge11-notetaker/blob/main/public/assets/images/readme2.jpg"Note Taking Dashboard")
+![alt text](https://github.com/ballardingram/challenge11-notetaker/blob/main/public/assets/images/readme3.jpg"Save Icon")
+![alt text](https://github.com/ballardingram/challenge11-notetaker/blob/main/public/assets/images/readme4.jpg"Saved Notes")
+![alt text](https://github.com/ballardingram/challenge11-notetaker/blob/main/public/assets/images/readme5.jpg"Delete Note")
 
 ### Video of Site Functionality
 Click on the link below to access a VIDEO DEMO of the application.
