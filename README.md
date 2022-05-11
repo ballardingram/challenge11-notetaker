@@ -39,8 +39,7 @@ I tested my routes using Insomnia. A tip from my Tutor is to start using NODEMON
 ### Video of Site Functionality
 Click on the link below to access a VIDEO DEMO of the application.
 
-https://drive.google.com/file/d/1ZSNyzZsH6iCWm3xVaa2CtsTdzbQIiYqX/view
-
+https://drive.google.com/file/d/1j7gD0tjqXXiuwk5B-uw5ZIdKogiB2KE2/view
 
 ### Heroku Deployment
 Click on the link below to access the deployed HEROKU site.
